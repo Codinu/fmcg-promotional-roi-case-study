@@ -64,8 +64,20 @@ Current dataset size:
 
 Files:
 
+Primary dataset:
+
+* `data/fmcg_promo_roi_synthetic_dataset_v2.csv`
+* `data/fmcg_promo_roi_summary_tables_v2.csv`
+
+Original dataset version:
+
 * `data/fmcg_promo_roi_synthetic_dataset.csv`
 * `data/fmcg_promo_roi_summary_tables.csv`
+
+Generation script:
+
+* `src/generate_fmcg_promo_roi_dataset_v2.py`
+
 
 ---
 
@@ -384,18 +396,20 @@ Current status: In progress.
 
 Completed:
 
-* Synthetic FMCG promotional dataset
+* Calibrated synthetic FMCG promotional ROI dataset
 * Dataset generation script
 * Data dictionary
 * Metric definitions
 * Initial commercial analytics framework
+* Python analysis notebook structure
 
 In progress:
 
-* Python analysis notebook
+* Python notebook result interpretation
 * Excel / Power BI dashboard
 * Dashboard screenshots
 * Final commercial recommendations
+
 
 ---
 
