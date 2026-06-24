@@ -77,6 +77,9 @@ Original dataset version:
 Generation script:
 
 * `src/generate_fmcg_promo_roi_dataset_v2.py`
+Analysis notebook:
+
+* `notebooks/fmcg_promo_roi_analysis_v2.ipynb`
 
 
 ---
@@ -197,6 +200,30 @@ The project follows a commercial analytics workflow:
 10. Translate analysis outputs into account-manager-facing recommendations.
 
 ---
+## Analysis Results
+
+The v2 dataset was calibrated to create a realistic mix of successful, marginal, and underperforming promotional campaigns.
+
+Headline results:
+
+| Metric                                    |   Result |
+| ----------------------------------------- | -------: |
+| Total rows                                |    9,360 |
+| Promotional event rows                    |    1,889 |
+| Positive ROI promotional events           |    61.6% |
+| Median Promo ROI                          |     0.28 |
+| Total incremental profit after promo cost | $349,237 |
+
+Recommendation split:
+
+| Recommendation        | Promotional Events |
+| --------------------- | -----------------: |
+| Repeat                |                786 |
+| Targeted repeat       |                377 |
+| Adjust depth/mechanic |                715 |
+| Discontinue           |                 11 |
+
+These results show that not every promotion should be treated the same. Some campaigns generated profitable uplift and should be repeated, while others increased sales volume but require adjustment because promotional cost and margin impact reduced commercial return.
 
 ## Recommendation Logic
 
@@ -400,15 +427,17 @@ Completed:
 * Dataset generation script
 * Data dictionary
 * Metric definitions
+* Python analysis notebook using v2 dataset
 * Initial commercial analytics framework
-* Python analysis notebook structure
+* Headline promotional ROI results
 
 In progress:
 
-* Python notebook result interpretation
 * Excel / Power BI dashboard
 * Dashboard screenshots
-* Final commercial recommendations
+* Final dashboard-based recommendations
+* project summary
+
 
 
 ---
