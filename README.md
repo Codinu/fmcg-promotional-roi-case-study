@@ -52,13 +52,15 @@ Dataset grain:
 * Campaign ID
 
 Current dataset size:
-
-* 52 weeks
-* 12 products
-* 5 regions
-* 3 retail account groups
-* 9,360 total rows
-* 1,910 promotional event rows
+- 52 weeks
+- 12 products
+- 5 regions
+- 3 retail account groups
+- 9,360 total rows
+- 1,889 promotional event rows
+- 61.6% positive ROI promotional events
+- Median Promo ROI: 0.28
+- Total Incremental Profit: $349,237
 
 Files:
 
