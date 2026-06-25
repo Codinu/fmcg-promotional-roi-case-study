@@ -263,7 +263,7 @@ The key commercial principle is:
 
 ---
 
-## Planned Dashboard Structure
+## Power BI Dashboard Design
 
 The dashboard is designed for Excel / Power BI reporting.
 
@@ -280,7 +280,7 @@ Key KPIs:
 * Positive ROI promotion rate
 * High cannibalisation risk count
 
-Suggested visuals:
+Dashboard pages and visuals include:
 
 * KPI cards
 * Incremental profit by recommendation
@@ -381,36 +381,41 @@ fmcg-promotional-roi-case-study/
 │
 ├── README.md
 ├── requirements.txt
+├── LICENSE
 │
 ├── data/
+│   ├── fmcg_promo_roi_synthetic_dataset_v2.csv
+│   ├── fmcg_promo_roi_summary_tables_v2.csv
 │   ├── fmcg_promo_roi_synthetic_dataset.csv
 │   └── fmcg_promo_roi_summary_tables.csv
 │
 ├── src/
-│   └── generate_fmcg_promo_roi_dataset.py
+│   └── generate_fmcg_promo_roi_dataset_v2.py
 │
 ├── notebooks/
-│   └── fmcg_promo_roi_analysis.ipynb
+│   └── fmcg_promo_roi_analysis_v2.ipynb
 │
 ├── docs/
 │   ├── data_dictionary.md
 │   └── metric_definitions.md
 │
 ├── dashboard/
-│   ├── powerbi/
-│   └── excel/
+│   └── powerbi/
 │
 └── images/
+    ├── ExecutiveSummary.png
+    ├── PromoRoiCampaign.png
+    ├── UpliftVsMarginImpact.png
+    ├── CategoryRegionAnalysis.png
+    └── CannibalisationRisk.png
 ```
-
----
 
 ## How to Run
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/fmcg-promotional-roi-case-study.git
+git clone https://github.com/Codinu/fmcg-promotional-roi-case-study.git
 cd fmcg-promotional-roi-case-study
 ```
 
@@ -423,42 +428,43 @@ pip install -r requirements.txt
 Generate the synthetic dataset:
 
 ```bash
-python src/generate_fmcg_promo_roi_dataset.py
+python src/generate_fmcg_promo_roi_dataset_v2.py
 ```
 
-This creates:
+This creates the main CSV outputs used for analysis and dashboard development:
 
 ```text
-fmcg_promo_roi_synthetic_dataset.csv
-fmcg_promo_roi_summary_tables.csv
+data/fmcg_promo_roi_synthetic_dataset_v2.csv
+data/fmcg_promo_roi_summary_tables_v2.csv
 ```
 
-The CSV files can then be imported into Excel or Power BI for dashboard development.
+Open the analysis notebook:
+
+```text
+notebooks/fmcg_promo_roi_analysis_v2.ipynb
+```
+
+The CSV outputs can be imported into Excel or Power BI for dashboard development.
 
 ---
-
 ## Project Status
 
-Current status: In progress.
+Current status: Portfolio-ready case study.
 
 Completed:
 
-* Calibrated synthetic FMCG promotional ROI dataset
+* Synthetic FMCG promotional ROI dataset
 * Dataset generation script
-* Data dictionary
-* Metric definitions
-* Python analysis notebook using v2 dataset
-* Initial commercial analytics framework
-* Headline promotional ROI results
+* Data dictionary and metric definitions
+* Python analysis notebook
+* Power BI dashboard with five analytical pages
+* Executive summary and campaign-level ROI analysis
+* Uplift vs margin impact analysis
+* Category, region and account performance analysis
+* Cannibalisation risk analysis
+* Commercial recommendation logic for Repeat, Targeted repeat, Adjust depth/mechanic and Discontinue actions
 
-In progress:
-
-* Excel / Power BI dashboard
-* Dashboard screenshots
-* Final dashboard-based recommendations
-* project summary
-
-
+This project is designed as a portfolio case study for commercial analytics, data analyst and graduate data scientist roles.
 
 ---
 
