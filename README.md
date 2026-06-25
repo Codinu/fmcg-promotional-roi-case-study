@@ -13,7 +13,27 @@ The core business question is:
 **Which promotions should be repeated, adjusted, reviewed, or discontinued based on uplift, margin impact, promotional investment, ROI, and cannibalisation risk?**
 
 ---
+## Dashboard Screenshots
 
+### Executive Summary
+
+![Executive Summary](images/ExecutiveSummary.png)
+
+### Promo ROI by Campaign
+
+![Promo ROI by Campaign](images/PromoRoiCampaign.png)
+
+### Uplift vs Margin Impact
+
+![Uplift vs Margin Impact](images/UpliftVsMarginImpact.png)
+
+### Category & Region Analysis
+
+![Category & Region Analysis](images/CategoryRegionAnalysis.png)
+
+### Cannibalisation Risk
+
+![Cannibalisation Risk](images/CannibalisationRisk.png)
 ## Business Problem
 
 FMCG promotions often increase sales volume, but higher volume does not always mean higher profit.
