@@ -10,7 +10,7 @@ The project is designed from the perspective of a data analyst supporting accoun
 
 The core business question is:
 
-**Which promotions should be repeated, adjusted, reviewed, or discontinued based on uplift, margin impact, promotional investment, ROI, and cannibalisation risk?**
+**Which retail promotions created profitable incremental growth, and which should be repeated, targeted, adjusted or discontinued?**
 
 ---
 ## Dashboard Screenshots
@@ -349,16 +349,13 @@ Suggested visuals:
 
 ---
 
-## Example Business Insights
+## Key Commercial Insights
 
-The final dashboard and notebook are designed to surface insights such as:
-
-* Some promotions delivered strong sales uplift but negative ROI after discounting and promotional cost.
-* High uplift does not always indicate a successful promotion if gross margin is heavily reduced.
-* Certain promo mechanics may be better suited to specific categories or accounts.
-* Some campaigns are better suited for targeted repeat in selected regions rather than national rollout.
-* Promotions with high cannibalisation risk should be reviewed before being repeated.
-* Account managers can use ROI, margin impact, and rate of sale together to support buyer conversations and promotional planning.
+- 61.6% of promotional events generated positive ROI, showing that a majority of promotions were commercially viable but still required prioritisation.
+- Total incremental profit after promotional cost was $349,237 across 1,889 promotional event rows.
+- High uplift did not always translate into strong profit; several campaigns created volume growth but underperformed after discount depth and promotional cost were considered.
+- Repeat campaigns were the strongest contributors to incremental profit, while Adjust depth/mechanic campaigns showed that some promotions needed better discount control or mechanic changes.
+- Cannibalisation risk was concentrated in selected categories, suggesting that uplift should be reviewed alongside category switching risk before repeating campaigns.
 
 ---
 
