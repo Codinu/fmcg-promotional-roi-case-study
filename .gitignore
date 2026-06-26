@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Local Streamlit runtime
+.streamlit/config.toml
+
+# Local OS files
+.DS_Store
+Thumbs.db
+
+# Local exports / temporary files
+exports/
+tmp/
+*.tmp
+
+# Local deployment files
+docker-compose.override.yml
