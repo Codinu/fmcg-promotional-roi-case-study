@@ -417,3 +417,113 @@ def uplift_vs_cannibalisation_scatter(campaigns: pd.DataFrame) -> go.Figure:
         yaxis_tickformat=".0%",
     )
     return apply_standard_layout(fig, height=480)
+
+def regression_actual_vs_predicted(predictions: pd.DataFrame) -> go.Figure:
+    if predictions.empty:
+        return empty_figure()
+
+    min_value = min(predictions["Actual"].min(), predictions["Predicted"].min())
+    max_value = max(predictions["Actual"].max(), predictions["Predicted"].max())
+
+    fig = px.scatter(
+        predictions,
+        x="Actual",
+        y="Predicted",
+        title="Actual vs Predicted",
+        opacity=0.65,
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=[min_value, max_value],
+            y=[min_value, max_value],
+            mode="lines",
+            name="Perfect prediction",
+            line=dict(dash="dash"),
+        )
+    )
+    fig.update_layout(
+        xaxis_title="Actual Units",
+        yaxis_title="Predicted Units",
+    )
+    return apply_standard_layout(fig, height=460)
+
+
+def residual_histogram(predictions: pd.DataFrame) -> go.Figure:
+    if predictions.empty:
+        return empty_figure()
+
+    fig = px.histogram(
+        predictions,
+        x="Residual",
+        nbins=40,
+        title="Residual Distribution",
+    )
+    fig.add_vline(x=0, line_dash="dash")
+    fig.update_layout(
+        xaxis_title="Actual - Predicted",
+        yaxis_title="Count",
+    )
+    return apply_standard_layout(fig, height=420)
+
+
+def feature_importance_bar(importance_df: pd.DataFrame, title: str = "Feature Importance") -> go.Figure:
+    if importance_df.empty:
+        return empty_figure()
+
+    plot_df = importance_df.sort_values("Importance", ascending=True)
+
+    fig = px.bar(
+        plot_df,
+        x="Importance",
+        y="Feature",
+        orientation="h",
+        title=title,
+    )
+    fig.update_layout(
+        xaxis_title="Importance",
+        yaxis_title="Feature",
+    )
+    return apply_standard_layout(fig, height=520)
+
+
+def confusion_matrix_heatmap(confusion) -> go.Figure:
+    fig = px.imshow(
+        confusion,
+        text_auto=True,
+        aspect="auto",
+        labels=dict(x="Predicted", y="Actual", color="Count"),
+        x=["Negative ROI", "Positive ROI"],
+        y=["Negative ROI", "Positive ROI"],
+        title="Confusion Matrix",
+    )
+    fig.update_layout(
+        template="plotly_white",
+        height=420,
+        margin=dict(l=20, r=20, t=60, b=40),
+    )
+    return fig
+
+
+def classification_probability_histogram(predictions: pd.DataFrame) -> go.Figure:
+    if predictions.empty or "Positive_ROI_Probability" not in predictions.columns:
+        return empty_figure()
+
+    plot_df = predictions.dropna(subset=["Positive_ROI_Probability"]).copy()
+
+    if plot_df.empty:
+        return empty_figure("No probability output available for this model")
+
+    fig = px.histogram(
+        plot_df,
+        x="Positive_ROI_Probability",
+        color="Actual",
+        nbins=30,
+        title="Predicted Positive ROI Probability Distribution",
+        opacity=0.75,
+    )
+    fig.update_layout(
+        xaxis_title="Predicted probability of positive ROI",
+        yaxis_title="Count",
+        xaxis_tickformat=".0%",
+    )
+    return apply_standard_layout(fig, height=420)
