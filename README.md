@@ -1,5 +1,9 @@
 # FMCG Promotional ROI Case Study — Excel / Power BI / Python
+## Live Demo
 
+The Streamlit web app is deployed on Azure VM using Docker, Nginx reverse proxy and HTTPS.
+
+Live demo: https://fmcg.colin-h.com
 ## Project Overview
 
 This project is a simulated FMCG commercial analytics case study designed to evaluate whether retail promotions generated profitable incremental growth.

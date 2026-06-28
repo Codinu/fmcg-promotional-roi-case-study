@@ -230,3 +230,6 @@ tmp/
 
 # Local deployment files
 docker-compose.override.yml
+
+*.pem
+*.key
